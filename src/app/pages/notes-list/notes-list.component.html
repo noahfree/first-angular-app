@@ -1,0 +1,32 @@
+<!-- /* Video references for code in this project: */
+/* 		1st video reference: https://youtu.be/akUcKvEsG8w */
+/* 		2nd video reference: https://youtu.be/Rghqrp59XJA */
+/* 		3rd video reference: https://youtu.be/0DnL5awucWE */
+/* 		4th video reference: https://youtu.be/vWt9WvjUfRA */ -->
+
+<div class="main-container">
+    <div class="search-bar-container">
+      <div class="field">
+        <p class="control has-icons-left">
+			<!-- Following line: https://github.com/angular/angular/issues/35293 -->
+          <input #filterInput class="input" type="text" (keyup)="filter($any($event.target).value)" placeholder="Filter">
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="notes-list" [@listAnim]>
+        <app-note-card
+			*ngFor="let note of filteredNotes; index as i"
+			[link]="'/' + generateNoteURL(note)"
+			[@itemAnim]
+			(delete)="deleteNote(note)"
+			[title]="note.title"
+			[body]="note.body"
+			[starred]="note.starred"></app-note-card>
+    </div>
+
+	<button class="button floating-add-button" routerLink="new">+ Add</button>
+</div>

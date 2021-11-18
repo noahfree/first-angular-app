@@ -1,0 +1,40 @@
+/* Video references for code in this project: */
+/* 		1st video reference: https://youtu.be/akUcKvEsG8w */
+/* 		2nd video reference: https://youtu.be/Rghqrp59XJA */
+/* 		3rd video reference: https://youtu.be/0DnL5awucWE */
+/* 		4th video reference: https://youtu.be/vWt9WvjUfRA */
+
+@import '../../../main-styles.scss';
+
+.layout-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  overflow: hidden;
+
+  .page-content {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+}
+
+.top-bar {
+  width: 100%;
+  height: 68px;
+  background: linear-gradient(to right, $pink, $blue);
+
+  box-shadow: 0px 0px 10px 0px rgba(black, 0.15);
+
+  display: flex;
+  flex-shrink: 0; /* to prevent the top bar from shrinking */
+
+  /* Center child element (the heading) */
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: white;
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,37 @@
+<!-- /* Video references for code in this project: */
+/* 		1st video reference: https://youtu.be/akUcKvEsG8w */
+/* 		2nd video reference: https://youtu.be/Rghqrp59XJA */
+/* 		3rd video reference: https://youtu.be/0DnL5awucWE */
+/* 		4th video reference: https://youtu.be/vWt9WvjUfRA */ -->
+
+<div class="form-container">
+	<form #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)">
+
+		<div class="field">
+			<label class="label">Title</label>
+			<div class="control">
+				  <input required type="text" class="input" name="title" [ngModel]="note.title">
+			</div>
+		</div>
+
+		<br>
+
+		<div class="field">
+			  <label class="label">Body</label>
+			  <div class="control">
+				    <textarea class="textarea" name="body" [ngModel]="note.body"></textarea>
+			  </div>
+		</div>
+
+		<!-- these are classes provided by bulma, useful for creating buttons -->
+		<div class="field is-grouped is-pulled-right">
+			<div class="star-icon" (click)="toggleStar()" [ngStyle]="{'opacity': this.starred ? '80%' : '40%'}"></div>
+			<div class="control">
+				<button class="button is-text" type="button" (click)="onCancel()">Cancel</button>
+			</div>
+			<div class="control">
+			    <button class="button is-success" type="submit" [disabled]="!noteForm.valid">Save</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,34 @@
+/* Video references for code in this project: */
+/* 		1st video reference: https://youtu.be/akUcKvEsG8w */
+/* 		2nd video reference: https://youtu.be/Rghqrp59XJA */
+/* 		3rd video reference: https://youtu.be/0DnL5awucWE */
+/* 		4th video reference: https://youtu.be/vWt9WvjUfRA */
+
+.form-container {
+	max-width: 500px;
+
+	margin: auto;
+	margin-top: 50px;
+}
+
+.star-icon {
+	background-image: url('../../../assets/star_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+	z-index: 100;
+	width: 36px;
+	margin-right: -10px;
+	opacity: 50%;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+}
+
+input, textarea {
+	&.ng-invalid.ng-touched {
+		border-color: red;
+
+		&:focus{
+			box-shadow: 0px 0px 0px 2px rgba(red, 0.1);
+		}
+	}
+}
